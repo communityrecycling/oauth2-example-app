@@ -1,0 +1,24 @@
+{
+  "name": "oauth2-example-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.12.2",
+    "oauth": "^0.9.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/communityrecycling/oauth2-example-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/communityrecycling/oauth2-example-app/issues"
+  },
+  "homepage": "https://github.com/communityrecycling/oauth2-example-app"
+}
