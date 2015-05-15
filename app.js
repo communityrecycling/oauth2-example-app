@@ -9,9 +9,9 @@ var express = require('express')
  * Client Details
  */
 
-client.id           = 'CLIENT_IDENTIFIER';
+client.id           = 'CLIENT_ID';
 client.secret       = 'CLIENT_SECRET';
-client.redirectUri  = 'CLIENT_REDIRECT_URI';
+client.redirectUri  = 'CLIENT_CALLBACK_URL';
 
 
 /**
@@ -21,9 +21,9 @@ client.redirectUri  = 'CLIENT_REDIRECT_URI';
 oauth2 = new OAuth2(
   client.id,
   client.secret,
-  'https://www.communityrecycling.biz/',
-  'auth/dialog/authorize',
-  'auth/token'
+  'https://cr-api-staging.herokuapp.com/',
+  'oauth/authorize',
+  'oauth/token'
 );
 
 
@@ -46,7 +46,7 @@ app.get('/', function (req, res) {
 app.get('/auth', function (req, res) {
   res.redirect(oauth2.getAuthorizeUrl({
     response_type:  'code',
-    scope:          ['read'],
+    scope:          ['write'],
     redirect_uri:   client.redirectUri
   }));
 });
@@ -65,7 +65,6 @@ app.all('/callback', function (req, res) {
     res.redirect('/made_it?access_token=' + accessToken);
   });
 });
-
 
 
 /**
