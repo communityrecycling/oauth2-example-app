@@ -21,9 +21,7 @@ client.redirectUri  = 'CLIENT_CALLBACK_URL';
 oauth2 = new OAuth2(
   client.id,
   client.secret,
-  'https://cr-api-staging.herokuapp.com/',
-  'oauth/authorize',
-  'oauth/token'
+  'https://cr-api-staging.herokuapp.com'
 );
 
 
